@@ -1,5 +1,4 @@
 var express = require("express");
-var pg = require('pg');
 var app = express();
 app.use(express.logger());
 
@@ -13,7 +12,7 @@ app.listen(port, function() {
 });
 
 
-
+var pg = require('pg');
 
 pg.connect(process.env.HEROKU_POSTGRESQL_ROSE_URL, function(err, client) {
   var query = client.query('SELECT * FROM your_table');
