@@ -12,13 +12,12 @@ app.listen(port, function() {
 });
 
 
-var pg = require('pg');
-var client = new Client(process.env.HEROKU_POSTGRESQL_ROSE_URL);
+var pg = require('pg').native
+  , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/fathomless-shore-6467'
+  , client
+  , query;
 
-pg.connect(process.env.HEROKU_POSTGRESQL_ROSE_URL, function(err, client) {
-  var query = client.query('SELECT * FROM your_table');
-
-  query.on('row', function(row) {
-    console.log(JSON.stringify(row));
-  });
-});
+client = new pg.Client(connectionString);
+client.connect();
+query = client.query('SELECT * FROM mytable');
+query.on('end', function() { client.end(); });
