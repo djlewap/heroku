@@ -25,9 +25,9 @@
 var express = require('express')
   , app = express()
   , pg = require('pg')
-  , connectionString = process.env.DATABASE_URL
+  , connectionString = process.env.DATABASE_URL || 'postgres://qwhoxmulnhxiax:vdt5elD96k9K4_g7Nvz73BdQpV@ec2-54-204-2-217.compute-1.amazonaws.com:5432/d24sejgbj31vo2'
   , start = new Date()
-  , port = process.env.PORT || 5000
+  , port = process.env.PORT || 3000
   , client;
 
 client = new pg.Client(connectionString);
