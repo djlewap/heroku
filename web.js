@@ -13,8 +13,9 @@ app.listen(port, function() {
 
 
 var pg = require('pg');
+var client = new Client(process.env.DATABASE_URL);
 
-pg.connect(process.env.HEROKU_POSTGRESQL_ROSE_URL, function(err, client) {
+pg.connect(process.env.DATABASE_URL, function(err, client) {
   var query = client.query('SELECT * FROM your_table');
 
   query.on('row', function(row) {
