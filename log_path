@@ -1,1 +1,34 @@
-Updating from 3.0.0... done, nothing to update
+ !    Heroku client intfailed
+ror.
+ !    Search for help at: https://help.heroku.com
+ !    Or report a bug at: https://github.com/heroku/heroku/issues/new
+
+    Error:       getaddrinfo: Этот хост неизвестен.  (SocketError) (Excon::Errors::SocketError)
+    Backtrace:   c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/socket.rb:149:in `getaddrinfo'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/socket.rb:149:in `connect'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/socket.rb:32:in `initialize'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/connection.rb:363:in `new'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/connection.rb:363:in `socket'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/connection.rb:105:in `request_call'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/middlewares/mock.rb:42:in `request_call'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/middlewares/instrumentor.rb:22:in `request_call'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/middlewares/base.rb:15:in `request_call'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/middlewares/base.rb:15:in `request_call'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/middlewares/base.rb:15:in `request_call'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon/connection.rb:244:in `request'
+                 c:/Program Files (x86)/Heroku/vendor/gems/excon-0.25.3/lib/excon.rb:221:in `get'
+                 c:/Program Files (x86)/Heroku/lib/heroku/excon.rb:4:in `get_with_redirect'
+                 c:/Program Files (x86)/Heroku/lib/heroku/updater.rb:83:in `block in update'
+                 c:/Program Files (x86)/Heroku/lib/heroku/updater.rb:64:in `wait_for_lock'
+                 c:/Program Files (x86)/Heroku/lib/heroku/updater.rb:76:in `update'
+                 c:/Program Files (x86)/Heroku/lib/heroku/command/update.rb:39:in `block in update_from_url'
+                 c:/Program Files (x86)/Heroku/lib/heroku/helpers.rb:236:in `action'
+                 c:/Program Files (x86)/Heroku/lib/heroku/command/update.rb:38:in `update_from_url'
+                 c:/Program Files (x86)/Heroku/lib/heroku/command/update.rb:19:in `index'
+                 c:/Program Files (x86)/Heroku/lib/heroku/command.rb:213:in `run'
+                 c:/Program Files (x86)/Heroku/lib/heroku/cli.rb:28:in `start'
+                 c:/Program Files (x86)/Heroku/bin/heroku:29:in `<main>'
+
+    Command:     heroku update
+    Version:     heroku/toolbelt/3.0.0 (i386-mingw32) ruby/1.9.3
+

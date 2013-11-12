@@ -26,8 +26,10 @@ var express = require("express");
 var app = express();
 app.use(express.logger());
 
+var html = '<h1 style="position:fixed;top:50%;left:50%;font-size:24px;">САША ЛОШОК</h1>'
+
 app.get('/', function(request, response) {
-  response.send('Hello World!');
+  response.send(html);
 });
 
 var port = process.env.PORT || 5000;
