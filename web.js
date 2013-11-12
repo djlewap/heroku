@@ -38,6 +38,7 @@ app.listen(port, function() {
 
 
 var pg = require('pg');
+var client;
 
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
   client.query('SELECT * FROM your_table', function(err, result) {
