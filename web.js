@@ -27,7 +27,7 @@ var express = require('express')
   , pg = require('pg')
   , connectionString = process.env.DATABASE_URL
   , start = new Date()
-  , port = process.env.PORT || 5432
+  , port = process.env.PORT || 5000
   , client;
 
 client = new pg.Client(connectionString);
