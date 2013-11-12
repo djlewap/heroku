@@ -24,10 +24,10 @@
 
 var express = require('express')
   , app = express()
-  , pg = require('pg').native
+  , pg = require('pg')
   , connectionString = process.env.DATABASE_URL
   , start = new Date()
-  , port = process.env.PORT || 5000
+  , port = process.env.PORT || 5432
   , client;
 
 client = new pg.Client(connectionString);
