@@ -2,7 +2,7 @@
   "name": "node-example",
   "version": "0.0.1",
   "dependencies": {
-    "pg": "latest",
+    "pg": "9.3.1",
     "express": "latest"
   },
   "engines": {
