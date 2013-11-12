@@ -23,7 +23,7 @@
 // query.on('end', function() { client.end(); });
 
 var express = require('express')
-  , app = express.createServer(express.logger())
+  , app = express()
   , pg = require('pg').native
   , connectionString = process.env.DATABASE_URL
   , start = new Date()
