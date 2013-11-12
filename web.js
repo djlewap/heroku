@@ -12,12 +12,12 @@ app.listen(port, function() {
 });
 
 
-var pg = require('pg').native
-  , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/fathomless-shore-6467'
-  , client
-  , query;
+// var pg = require('pg').native
+//   , connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/fathomless-shore-6467'
+//   , client
+//   , query;
 
-client = new pg.Client(connectionString);
-client.connect();
-query = client.query('SELECT * FROM mytable');
-query.on('end', function() { client.end(); });
+// client = new pg.Client(connectionString);
+// client.connect();
+// query = client.query('SELECT * FROM mytable');
+// query.on('end', function() { client.end(); });
