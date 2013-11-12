@@ -34,13 +34,14 @@ var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
-
+ 
+var connectionString = process.env.DATABASE_URL || 'postgres://qwhoxmulnhxiax:vdt5elD96k9K4_g7Nvz73BdQpV@ec2-54-204-2-217.compute-1.amazonaws.com:5432/d24sejgbj31vo2'
 
 
 var pg = require('pg');
-var client;
+var client = new pg.Client(connectionString);
 
-pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+pg.connect(connectionString, function(err, client, done) {
   client.query('SELECT * FROM your_table', function(err, result) {
     done();
     if(err) return console.error(err);
