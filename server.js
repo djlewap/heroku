@@ -8,13 +8,10 @@ var html = '<h1 style="position:fixed;top:50%;left:50%;font-size:24px;">САША
 //   response.send(html);
 // });
 
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+
  
 var http = require("http");
-
+var url = require("url");
 
 var connectionString = process.env.DATABASE_URL || 'postgres://qwhoxmulnhxiax:vdt5elD96k9K4_g7Nvz73BdQpV@ec2-54-204-2-217.compute-1.amazonaws.com:5432/d24sejgbj31vo2'
 
@@ -30,8 +27,7 @@ pg.connect(connectionString, function(err, client, done) {
   });
 });
 
-var http = require("http");
-var url = require("url");
+
 
 function start(route, handle) {
   function onRequest(request, response) {
@@ -53,7 +49,12 @@ function start(route, handle) {
 
   }
 
-  http.createServer(onRequest).listen(8888);
+  var port = process.env.PORT || 5000;
+	// app.listen(port, function() {
+	//   console.log("Listening on " + port);
+	// });
+
+  http.createServer(onRequest).listen(port);
   console.log("Server has started.");
 }
 
