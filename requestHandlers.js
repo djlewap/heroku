@@ -17,14 +17,14 @@ function start(response, postData) {
     '</body>'+
     '</html>';
 
-    response.writeHead(200, {"Content-Type": "text/html"});
+    response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
     response.write(body);
     response.end();
 }
 
 function upload(response, postData) {
   console.log("Request handler 'upload' was called.");
-  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
   response.write("You've sent the text: "+
   querystring.parse(postData).text);
   response.end();
