@@ -10,8 +10,9 @@ function start(response, postData) {
     '</head>'+
     '<body>'+
     '<form action="/upload" method="post">'+
+    'Сашка, введи текст'+
     '<textarea name="text" rows="20" cols="60"></textarea>'+
-    '<input type="submit" value="Submit text" />'+
+    '<input type="submit" value="Жмяк!" />'+
     '</form>'+
     '</body>'+
     '</html>';
